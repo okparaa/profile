@@ -3,6 +3,12 @@ import App from './App';
 
 test('renders learn react link', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByTestId(/learn-link/i);
   expect(linkElement).toBeInTheDocument();
+});
+
+test('link should have altimateqa.com', () => {
+  render(<App />);
+  const linkElement = screen.getByTestId(/learn-link/i);
+  expect(linkElement.href).toContain("ultimateqa.com");
 });
